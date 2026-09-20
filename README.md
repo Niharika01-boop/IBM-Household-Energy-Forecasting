@@ -1,4 +1,8 @@
-*# Time-Series Forecasting of Household Energy Consumption using RNN and LSTM Architectures*
+*# Time-Series Forecasting of Household Energy Consumption using RNN and LSTM*
+
+
+
+*A deep learning project for forecasting household electricity consumption using recurrent neural network architectures, including Simple RNN, Vanilla LSTM, and Stacked LSTM.*
 
 
 
@@ -6,33 +10,19 @@
 
 
 
-*This project focuses on forecasting household electricity consumption using recurrent neural network architectures.*
+*This project investigates time-series forecasting of household electricity consumption using recurrent neural networks.*
 
 
 
-*The project investigates how different recurrent architectures and historical sequence lengths affect forecasting performance.*
+*The primary target variable is:*
 
 
 
-*The implemented models are:*
+*`Global\_active\_power`*
 
 
 
-*- Simple RNN*
-
-*- Vanilla LSTM*
-
-*- Stacked LSTM*
-
-
-
-*The project performs both:*
-
-
-
-*- Single-step forecasting*
-
-*- Multi-step forecasting*
+*The project evaluates both short-term and long-horizon forecasting using different historical sequence lengths and forecasting horizons.*
 
 
 
@@ -44,21 +34,25 @@
 
 
 
-*The main objectives are:*
+*The project aims to:*
 
 
 
-*1. Forecast household energy consumption for the next time step.*
+*- Forecast household electricity consumption one step ahead.*
 
-*2. Forecast energy consumption for the next 24 and 48 time steps.*
+*- Forecast the next 24 hours.*
 
-*3. Compare Simple RNN, Vanilla LSTM, and Stacked LSTM.*
+*- Forecast the next 48 hours.*
 
-*4. Study the effect of sequence length on forecasting performance.*
+*- Compare Simple RNN, Vanilla LSTM, and Stacked LSTM architectures.*
 
-*5. Evaluate models using RMSE, MAE, and MAPE.*
+*- Study the effect of sequence length on forecasting performance.*
 
-*6. Analyze prediction errors using residual analysis.*
+*- Evaluate models using RMSE, MAE, and MAPE.*
+
+*- Analyze prediction errors using residual distributions.*
+
+*- Compare actual and predicted energy consumption.*
 
 
 
@@ -70,15 +64,11 @@
 
 
 
-*Dataset:*
+*The project uses the \*\*UCI Household Electric Power Consumption Dataset\*\*.*
 
 
 
-*\*\*UCI Individual Household Electric Power Consumption Dataset\*\**
-
-
-
-*The dataset contains household electricity measurements collected over time.*
+*The dataset contains household electricity measurements recorded at one-minute intervals.*
 
 
 
@@ -102,7 +92,11 @@
 
 
 
-*The target variable is:*
+*The data was resampled from minute-level observations to hourly observations.*
+
+
+
+*### Target*
 
 
 
@@ -110,285 +104,67 @@
 
 
 
-*The raw dataset is not included in this repository because of its large size.*
-
-
-
 *---*
 
 
 
-*## ⚙️ Data Processing Pipeline*
-
-
-
-*The project follows this pipeline:*
-
-
-
-*Raw Dataset*  
-
-*↓*  
-
-*Data Cleaning*  
-
-*↓*  
-
-*Datetime Conversion*  
-
-*↓*  
-
-*Missing Value Handling*  
-
-*↓*  
-
-*Hourly Resampling*  
-
-*↓*  
-
-*Exploratory Data Analysis*  
-
-*↓*  
-
-*Cyclical Feature Engineering*  
-
-*↓*  
-
-*Chronological Train/Validation/Test Split*  
-
-*↓*  
-
-*Training-Only Scaling*  
-
-*↓*  
-
-*Sliding Window Creation*  
-
-*↓*  
-
-*RNN/LSTM Training*  
-
-*↓*  
-
-*Evaluation*
-
-
-
-*---*
-
-
-
-*## 🧠 Feature Engineering*
-
-
-
-*The following temporal features were created using cyclical encoding:*
-
-
-
-*- Hour of day*
-
-*- Day of week*
-
-*- Month*
-
-
-
-*Each temporal variable was represented using sine and cosine transformations.*
-
-
-
-*For example:*
-
-
-
-*`hour\_sin`*
-
-
-
-*`hour\_cos`*
-
-
-
-*This allows the model to represent the cyclic nature of time.*
-
-
-
-*---*
-
-
-
-*## 🤖 Models*
-
-
-
-*### Simple RNN*
-
-
-
-*A single-layer recurrent neural network.*
-
-
-
-*### Vanilla LSTM*
-
-
-
-*A single-layer Long Short-Term Memory network.*
-
-
-
-*### Stacked LSTM*
-
-
-
-*A two-layer LSTM architecture designed to learn deeper temporal representations.*
-
-
-
-*---*
-
-
-
-*## ⏱️ Sequence Lengths*
-
-
-
-*The project investigates:*
-
-
-
-*- 24 hours*
-
-*- 72 hours*
-
-*- 168 hours*
-
-
-
-*These represent:*
-
-
-
-*- 1 day*
-
-*- 3 days*
-
-*- 7 days*
-
-
-
-*of historical information.*
-
-
-
-*---*
-
-
-
-*## 🔮 Forecast Horizons*
-
-
-
-*The project evaluates:*
-
-
-
-*- 1-step forecasting*
-
-*- 24-step forecasting*
-
-*- 48-step forecasting*
-
-
-
-*---*
-
-
-
-*## 📏 Evaluation Metrics*
-
-
-
-*The models are evaluated using:*
-
-
-
-*### RMSE*
-
-
-
-*Root Mean Squared Error.*
-
-
-
-*### MAE*
-
-
-
-*Mean Absolute Error.*
-
-
-
-*### MAPE*
-
-
-
-*Mean Absolute Percentage Error.*
-
-
-
-*MAPE is interpreted carefully because percentage-based errors can become unstable when actual values are close to zero.*
-
-
-
-*---*
-
-
-
-*## 📈 Results*
-
-
-
-*Final experimental results will be added here after completing all experiments.*
-
-
-
-*| Model | Sequence Length | Horizon | RMSE | MAE | MAPE |*
-
-*|---|---:|---:|---:|---:|---:|*
-
-*| Simple RNN | 24 | 1 | - | - | - |*
-
-*| Vanilla LSTM | 24 | 1 | - | - | - |*
-
-*| Stacked LSTM | 24 | 1 | - | - | - |*
-
-
-
-*---*
-
-
-
-*## 📁 Project Structure*
+*## 🔄 Project Pipeline*
 
 
 
 *```text*
 
-*IBM-Household-Energy-Forecasting/*
+*Raw Dataset*
 
-*│*
+&#x20;    *↓*
 
-*├── data/*
+*Data Cleaning*
 
-*├── src/*
+&#x20;    *↓*
 
-*├── artifacts/*
+*Missing Value Handling*
 
-*├── requirements.txt*
+&#x20;    *↓*
 
-*├── .gitignore*
+*Hourly Resampling*
 
-*└── README.md*
+&#x20;    *↓*
+
+*Exploratory Data Analysis*
+
+&#x20;    *↓*
+
+*Feature Engineering*
+
+&#x20;    *↓*
+
+*Chronological Train / Validation / Test Split*
+
+&#x20;    *↓*
+
+*Train-only Feature Scaling*
+
+&#x20;    *↓*
+
+*Sliding Window Sequence Creation*
+
+&#x20;    *↓*
+
+*RNN / LSTM / Stacked LSTM*
+
+&#x20;    *↓*
+
+*Forecasting*
+
+&#x20;    *↓*
+
+*Inverse Scaling*
+
+&#x20;    *↓*
+
+*RMSE / MAE / MAPE*
+
+&#x20;    *↓*
+
+*Visualization \& Residual Analysis*
 
