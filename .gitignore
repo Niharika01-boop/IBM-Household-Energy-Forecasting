@@ -8,17 +8,6 @@ venv/
 .venv/
 env/
 
-# Raw and generated datasets
-data/household_power_consumption.txt
-data/*.csv
-data/scaled/
-data/sequences/
-
-# Trained models
-artifacts/models/
-*.pt
-*.pth
-
 # Temporary files
 *.tmp
 
