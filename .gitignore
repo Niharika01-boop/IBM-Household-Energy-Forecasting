@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Raw and generated datasets
+data/household_power_consumption.txt
+data/*.csv
+data/scaled/
+data/sequences/
+
+# Trained models
+artifacts/models/
+*.pt
+*.pth
+
+# Temporary files
+*.tmp
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
